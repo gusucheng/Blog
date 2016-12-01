@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/resetsign.css"/>
+    <link rel="stylesheet" href="./css/login.css"/>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="./libs/html5shiv/html5shiv.min.js"></script>
+    <script src="./libs/respond/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="page-container">
+    <h1>登录</h1>
+
+    <form id="form" action="http://127.0.0.1:8888/account/loginn" method="post">
+        <input id="username" type="text" name="username" placeholder="用户名">
+        <input id="password" type="password" name="password" placeholder="密码">
+        <button id="btnSend" type="submit">提交</button>
+        <div class="error"><span>+</span></div>
+    </form>
+    <div class="connect">
+        <p>Or connect with:</p>
+
+        <p>
+            <a class="facebook" href=""></a>
+            <a class="twitter" href=""></a>
+        </p>
+    </div>
+</div>
+<!-- Javascript -->
+<script src="./libs/jquery/jquery.min.js"></script>
+<!--登入-->
+<script>
+    $("#btnSend").click(function () {
+        var data = $("#form").serialize();
+        $.ajax({
+            type: "post",
+            url: "http://127.0.0.1:8888/account/login",
+            data: data,
+            dataType: "json",
+            success: function (data) {
+                if (data.code === 1) {
+                    //登录成功
+                    alert(data.msg);
+                    location.href = "http://localhost:63342/www/admin/index.html";
+
+                } else if (data.code === 0) {
+                    //登录失败layer.msg("登录失败");
+                    alert(data.msg);
+                }
+            }
+        });
+        return false;
+    })
+</script>
+</body>
+</html>
