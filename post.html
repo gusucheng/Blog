@@ -10,7 +10,7 @@
     <!-- Bootstrap -->
     <link href="libs/bootstrap/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="css/base.css"/>
-    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/post.css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,55 +51,16 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<!-- 头部 -->
-<header>
-    <div class="header_center">
-        <h1>Clean Blog</h1>
-        <hr/>
-        <p>A Clean Blog Theme by Start Bootstrap</p>
-    </div>
-</header>
-<!-- 内容区域 -->
-<div class="container">
-    <div class="pager">
-        <a href="javascript:;" class="prev"><span>←</span>&nbsp;NEWER</a>
-        <a href="javascript:;" class="next">OLDER&nbsp;<span>→</span></a>
-        <div>已经是最后一页了</div>
-    </div>
-</div>
-<!-- 底部区域 -->
-<footer>
-    <div class="foot_top">
-        <a href="#" class="iconfont icon-tuitetwitter43"></a>
-        <a href="#" class="iconfont icon-facebook"></a>
-        <a href="#" class="iconfont icon-github"></a>
-    </div>
-    <p>Copyright © Your Website 2016</p>
-</footer>
 
 
-<!-- 内容区域模板引擎 -->
-<script id="content" type="text/html">
-    {{if results}}
-    <ul class="containerList">
-        {{each results as value}}
-        <li>
-            <a href="http://127.0.0.1:8888/posts/{{value.id}}">
-                <h2>{{value.title}}</h2>
-                <h3>{{value.excerpt}}</h3>
-            </a>
-            <p class="getTime"></p>
-        </li>
-        {{/each}}
-    </ul>
-    {{/if}}
-</script>
+
+
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="libs/jquery/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="libs/bootstrap/bootstrap.js"></script>
-<script src="libs/template/template.js"></script>
-<script src="js/common.js"></script>
-<script src="js/index.js"></script>
+
+
 </body>
 </html>
